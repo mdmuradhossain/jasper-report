@@ -8,6 +8,7 @@ public class JasperReportApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(JasperReportApplication.class, args);
+
 	}
 
 }
