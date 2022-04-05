@@ -11,10 +11,18 @@ import io.murad.jasper.report.repository.EmployeeRepository;
 @Service
 public class EmployeeService {
 
-	@Autowired
-	private EmployeeRepository employeeRepository;
+    @Autowired
+    private EmployeeRepository employeeRepository;
 
-	public List<Employee> getAllEmployee() {
-		return employeeRepository.findAll();
-	}
+    public List<Employee> getAllEmployee() {
+        return employeeRepository.findAll();
+    }
+
+    public Employee getEmployeeByPhoneNumber(String phoneNumber) {
+        return employeeRepository.findByPhoneNumber(phoneNumber);
+    }
+
+    public void saveEmployee(Employee employee) {
+        employeeRepository.save(employee);
+    }
 }

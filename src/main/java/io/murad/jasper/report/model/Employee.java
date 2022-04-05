@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table
@@ -17,13 +19,16 @@ public class Employee {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long employeeId;
 
-	@Column
+	@NotBlank(message = "Employee first name is required")
 	private String firstName;
 
-	@Column
+	@Column()
+	@NotBlank(message = "Employee last name is required")
 	private String lastName;
 
+
 	@Column
+	@Email(message="Please provide a valid email address")
 	private String email;
 
 	@Column

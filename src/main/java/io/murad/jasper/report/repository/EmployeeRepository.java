@@ -8,4 +8,5 @@ import io.murad.jasper.report.model.Employee;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long>{
 
+    Employee findByPhoneNumber(String phoneNumber);
 }
